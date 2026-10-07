@@ -1,12 +1,12 @@
 public class ProductoService
 {
-    // RF-02: el nombre del producto no debe estar vacío
+    // el nombre del producto no debe estar vacío
     public bool NombreValido(string nombre)
     {
         return !string.IsNullOrWhiteSpace(nombre);
     }
 
-    // RF-02: el precio debe ser mayor que cero
+    // el precio debe ser mayor que cero
     public bool PrecioValido(decimal precio)
     {
         return precio > 0;
@@ -16,5 +16,11 @@ public class ProductoService
     public bool ProductoValido(string nombre, decimal precio)
     {
         return NombreValido(nombre) && PrecioValido(precio);
+    }
+
+    // comprobar si hay stock disponible
+    public bool HayStock(int stock)
+    {
+        return stock > 0;
     }
 }
